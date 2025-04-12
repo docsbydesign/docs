@@ -53,7 +53,7 @@
             ]
           },
           {
-            "group": "To-Do examples",
+            "group": "To-Do service",
             "pages": [
               "api-reference/to-do-endpoint/get-all-users",
               "api-reference/to-do-endpoint/add-a-user",
