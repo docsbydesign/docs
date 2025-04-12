@@ -31,11 +31,11 @@ paths:
                 usersList:
                   $ref: '#/components/examples/UsersList'
         '404':
-          description: Not found error
+          description: The requested resource or instance wasn't found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: '#/components/schemas/Error_NotFound'
 
     post:
       summary: Add a user
@@ -81,12 +81,11 @@ paths:
                   $ref: '#/components/examples/SingleUser'
 
         '404':
-          description: Not found error
+          description: The requested resource or instance wasn't found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
-
+                $ref: '#/components/schemas/Error_NotFound'
 
     patch:
       summary: Update a property of a user (excluding ID)
@@ -118,11 +117,11 @@ paths:
                   $ref: '#/components/examples/UpdatedUser'
 
         '404':
-          description: Not found error
+          description: The requested resource or instance wasn't found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: '#/components/schemas/Error_NotFound'
 
     delete:
       summary: Delete a user by ID
@@ -138,11 +137,11 @@ paths:
           description: User deleted successfully
 
         '404':
-          description: Not found error
+          description: The requested resource or instance wasn't found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: '#/components/schemas/Error_NotFound'
 
   /tasks:
     get:
@@ -164,11 +163,11 @@ paths:
                   $ref: '#/components/examples/TasksList'
 
         '404':
-          description: Not found error
+          description: The requested resource or instance wasn't found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: '#/components/schemas/Error_NotFound'
 
     post:
       summary: Add a task
@@ -214,12 +213,11 @@ paths:
                   $ref: '#/components/examples/SingleTask'
 
         '404':
-          description: Not found error
+          description: The requested resource or instance wasn't found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
-
+                $ref: '#/components/schemas/Error_NotFound'
 
     patch:
       summary: Update a property of a task (excluding ID)
@@ -251,11 +249,11 @@ paths:
                   $ref: '#/components/examples/UpdatedTask'
 
         '404':
-          description: Not found error
+          description: The requested resource or instance wasn't found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: '#/components/schemas/Error_NotFound'
 
     delete:
       summary: Delete a task by ID
@@ -271,11 +269,11 @@ paths:
           description: Task deleted successfully
 
         '404':
-          description: Not found error
+          description: The requested resource or instance wasn't found
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error'
+                $ref: '#/components/schemas/Error_NotFound'
 
 components:
   schemas:
@@ -384,15 +382,12 @@ components:
       minProperties: 1
 
     Error_NotFound:
-      summary: The requested resource or instance wasn't found
+      description: "Returns an empty object {}"
       type: object
       nullable: true
       properties: {}
       additionalProperties: false
       maxProperties: 0
-      description: "This object is an empty object {}"
-      examples:
-        - {}
   
   examples:
     UsersList:
