@@ -51,6 +51,21 @@
               "api-reference/endpoint/delete",
               "api-reference/endpoint/webhook"
             ]
+          },
+          {
+            "group": "To-Do examples",
+            "pages": [
+              "api-reference/to-do-endpoint/get-all-users",
+              "api-reference/to-do-endpoint/add-a-user",
+              "api-reference/to-do-endpoint/get-a-user-by-id",
+              "api-reference/to-do-endpoint/delete-a-user-by-id",
+              "api-reference/to-do-endpoint/update-a-property-of-a-user-excluding-id",
+              "api-reference/to-do-endpoint/get-all-tasks",
+              "api-reference/to-do-endpoint/add-a-task",
+              "api-reference/to-do-endpoint/get-a-task-by-id",
+              "api-reference/to-do-endpoint/delete-a-task-by-id",
+              "api-reference/to-do-endpoint/update-a-property-of-a-task-excluding-id"
+            ]
           }
         ]
       }
