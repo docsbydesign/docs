@@ -281,14 +281,26 @@ components:
       type: object
       properties:
         id:
+          description: The unique ID of the user's account in the service
           type: integer
+          examples:
+            - 2
         last_name:
+          description: The user's last name
           type: string
+          examples:
+            - Wilson
         first_name:
+          description: The user's first name
           type: string
+          examples:
+            - Wilma
         email:
+          description: The user's contact email address
           type: string
           format: email
+          examples:
+            - Wilma.Wilson@example.com
       required:
         - id
         - last_name
