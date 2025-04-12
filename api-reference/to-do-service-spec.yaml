@@ -35,7 +35,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error_NotFound'
+                $ref: '#/components/schemas/ErrorNotFound'
 
     post:
       summary: Add a user
@@ -59,11 +59,11 @@ paths:
                 createdUser:
                   $ref: '#/components/examples/CreatedUser'
 
-  /users/{userId}:
+  /users/{Id}:
     get:
       summary: Get a user by ID
       parameters:
-        - name: userId
+        - name: Id
           in: path
           required: true
           description: ID of the user
@@ -85,12 +85,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error_NotFound'
+                $ref: '#/components/schemas/ErrorNotFound'
 
     patch:
       summary: Update a property of a user (excluding ID)
       parameters:
-        - name: userId
+        - name: Id
           in: path
           required: true
           description: ID of the user
@@ -121,12 +121,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error_NotFound'
+                $ref: '#/components/schemas/ErrorNotFound'
 
     delete:
       summary: Delete a user by ID
       parameters:
-        - name: userId
+        - name: Id
           in: path
           required: true
           description: ID of the user
@@ -141,7 +141,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error_NotFound'
+                $ref: '#/components/schemas/ErrorNotFound'
 
   /tasks:
     get:
@@ -167,7 +167,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error_NotFound'
+                $ref: '#/components/schemas/ErrorNotFound'
 
     post:
       summary: Add a task
@@ -191,11 +191,11 @@ paths:
                 createdTask:
                   $ref: '#/components/examples/CreatedTask'
 
-  /tasks/{taskId}:
+  /tasks/{TaskId}:
     get:
       summary: Get a task by ID
       parameters:
-        - name: taskId
+        - name: TaskId
           in: path
           required: true
           description: ID of the task
@@ -217,12 +217,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error_NotFound'
+                $ref: '#/components/schemas/ErrorNotFound'
 
     patch:
       summary: Update a property of a task (excluding ID)
       parameters:
-        - name: taskId
+        - name: TaskId
           in: path
           required: true
           description: ID of the task
@@ -253,12 +253,12 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error_NotFound'
+                $ref: '#/components/schemas/ErrorNotFound'
 
     delete:
       summary: Delete a task by ID
       parameters:
-        - name: taskId
+        - name: TaskId
           in: path
           required: true
           description: ID of the task
@@ -273,63 +273,63 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/Error_NotFound'
+                $ref: '#/components/schemas/ErrorNotFound'
 
 components:
   schemas:
     User:
       type: object
       properties:
-        id:
+        Id:
           description: The unique ID of the user's account in the service
           type: integer
           examples:
             - 2
-        last_name:
+        LastName:
           description: The user's last name
           type: string
           examples:
             - Wilson
-        first_name:
+        FirstName:
           description: The user's first name
           type: string
           examples:
             - Wilma
-        email:
+        ContactEmail:
           description: The user's contact email address
           type: string
           format: email
           examples:
             - Wilma.Wilson@example.com
       required:
-        - id
-        - last_name
-        - first_name
-        - email
+        - Id
+        - LastName
+        - FirstName
+        - ContactEmail
     
     UserInput:
       type: object
       properties:
-        last_name:
+        LastName:
           type: string
-        first_name:
+        FirstName:
           type: string
-        email:
+        ContactEmail:
           type: string
           format: email
       required:
-        - last_name
-        - first_name
-        - email
+        - LastName
+        - FirstName
+        - ContactEmail
     
     UserPatch:
       type: object
       properties:
-        last_name:
+        LastName:
           type: string
-        first_name:
+        FirstName:
           type: string
-        email:
+        ContactEmail:
           type: string
           format: email
       minProperties: 1
@@ -337,63 +337,63 @@ components:
     Task:
       type: object
       properties:
-        id:
+        Id:
           type: integer
-        user_id:
+        UserId:
           type: integer
-        title:
+        TaskTitle:
           type: string
-        description:
+        Description:
           type: string
-        due_date:
+        DueDate:
           type: string
           format: date-time
-        warning:
+        WarningOffset:
           type: integer
       required:
-        - id
-        - user_id
-        - title
-        - due_date
-        - warning
+        - Id
+        - UserId
+        - TaskTitle
+        - DueDate
+        - WarningOffset
     
     TaskInput:
       type: object
       properties:
-        user_id:
+        UserId:
           type: integer
-        title:
+        TaskTitle:
           type: string
-        description:
+        TaskDescription:
           type: string
-        due_date:
+        DueDate:
           type: string
           format: date-time
-        warning:
+        WarningOffset:
           type: integer
       required:
-        - user_id
-        - title
-        - due_date
-        - warning
+        - UserId
+        - TaskTitle
+        - DueDate
+        - WarningOffset
     
     TaskPatch:
       type: object
       properties:
-        user_id:
+        UserId:
           type: integer
-        title:
+        TaskTitle:
           type: string
-        description:
+        TaskDescription:
           type: string
-        due_date:
+        DueDate:
           type: string
           format: date-time
-        warning:
+        WarningOffset:
           type: integer
       minProperties: 1
 
-    Error_NotFound:
+    ErrorNotFound:
       description: "Returns an empty object {}"
       type: object
       nullable: true
@@ -406,128 +406,128 @@ components:
       summary: List of users
       value:
         users:
-          - last_name: "Smith"
-            first_name: "Ferdinand"
-            email: "f.smith@example.com"
-            id: 1
-          - last_name: "Jones"
-            first_name: "Jill"
-            email: "j.jones@example.com"
-            id: 2
-          - last_name: "Martinez"
-            first_name: "Marty"
-            email: "m.martinez@example.com"
-            id: 3
-          - last_name: "Bailey"
-            first_name: "Bill"
-            email: "b.bailey@example.com"
-            id: 4
+          - LastName: "Smith"
+            FirstName: "Ferdinand"
+            ContactEmail: "f.smith@example.com"
+            Id: 1
+          - LastName: "Jones"
+            FirstName: "Jill"
+            ContactEmail: "j.jones@example.com"
+            Id: 2
+          - LastName: "Martinez"
+            FirstName: "Marty"
+            ContactEmail: "m.martinez@example.com"
+            Id: 3
+          - LastName: "Bailey"
+            FirstName: "Bill"
+            ContactEmail: "b.bailey@example.com"
+            Id: 4
     
     NewUser:
       summary: Example of new user data
       value:
-        last_name: "Doe"
-        first_name: "John"
-        email: "j.doe@example.com"
+        LastName: "Doe"
+        FirstName: "John"
+        ContactEmail: "j.doe@example.com"
     
     CreatedUser:
       summary: Example of newly created user
       value:
-        id: 5
-        last_name: "Doe"
-        first_name: "John"
-        email: "j.doe@example.com"
+        Id: 5
+        LastName: "Doe"
+        FirstName: "John"
+        ContactEmail: "j.doe@example.com"
     
     SingleUser:
       summary: Example of a single user
       value:
-        last_name: "Smith"
-        first_name: "Ferdinand"
-        email: "f.smith@example.com"
-        id: 1
+        LastName: "Smith"
+        FirstName: "Ferdinand"
+        ContactEmail: "f.smith@example.com"
+        Id: 1
     
     UserPatch:
       summary: Example of user patch data
       value:
-        email: "new.email@example.com"
+        ContactEmail: "new.email@example.com"
     
     UpdatedUser:
       summary: Example of updated user
       value:
-        last_name: "Smith"
-        first_name: "Ferdinand"
-        email: "new.email@example.com"
-        id: 1
+        LastName: "Smith"
+        FirstName: "Ferdinand"
+        ContactEmail: "new.email@example.com"
+        Id: 1
     
     TasksList:
       summary: List of tasks
       value:
         tasks:
-          - user_id: 1
-            title: "Grocery shopping"
-            description: "eggs, bacon, gummy bears"
-            due_date: "2024-02-20T17:00:00.000-05:00"
-            warning: -60
-            id: 1
-          - user_id: 1
-            title: "Piano recital"
-            description: "Daughter's first concert appearance"
-            due_date: "2024-04-02T15:00:00-05:00"
-            warning: -30
-            id: 2
-          - user_id: 2
-            title: "Oil change"
-            description: "5K auto service"
-            due_date: "2024-03-10T09:00:00-05:00"
-            warning: -60
-            id: 3
-          - user_id: 3
-            title: "Get shots for dog"
-            description: "Annual vaccinations for poochy"
-            due_date: "2024-05-11T14:00:00-05:00"
-            warning: -20
-            id: 4
+          - UserId: 1
+            TaskTitle: "Grocery shopping"
+            TaskDescription: "eggs, bacon, gummy bears"
+            DueDate: "2024-02-20T17:00:00.000-05:00"
+            WarningOffset: -60
+            Id: 1
+          - UserId: 1
+            TaskTitle: "Piano recital"
+            TaskDescription: "Daughter's first concert appearance"
+            DueDate: "2024-04-02T15:00:00-05:00"
+            WarningOffset: -30
+            Id: 2
+          - UserId: 2
+            TaskTitle: "Oil change"
+            TaskDescription: "5K auto service"
+            DueDate: "2024-03-10T09:00:00-05:00"
+            WarningOffset: -60
+            Id: 3
+          - UserId: 3
+            TaskTitle: "Get shots for dog"
+            TaskDescription: "Annual vaccinations for poochy"
+            DueDate: "2024-05-11T14:00:00-05:00"
+            WarningOffset: -20
+            Id: 4
     
     NewTask:
       summary: Example of new task data
       value:
-        user_id: 1
-        title: "New Task"
-        description: "Description of the new task"
-        due_date: "2024-06-01T12:00:00-05:00"
-        warning: -5
+        UserId: 1
+        TaskTitle: "New Task"
+        TaskDescription: "Description of the new task"
+        DueDate: "2024-06-01T12:00:00-05:00"
+        WarningOffset: -5
     
     CreatedTask:
       summary: Example of newly created task
       value:
-        id: 5
-        user_id: 1
-        title: "New Task"
-        description: "Description of the new task"
-        due_date: "2024-06-01T12:00:00-05:00"
-        warning: -5
+        Id: 5
+        UserId: 1
+        TaskTitle: "New Task"
+        TaskDescription: "Description of the new task"
+        DueDate: "2024-06-01T12:00:00-05:00"
+        WarningOffset: -5
     
     SingleTask:
       summary: Example of a single task
       value:
-        user_id: 1
-        title: "Grocery shopping"
-        description: "eggs, bacon, gummy bears"
-        due_date: "2024-02-20T17:00:00-05:00"
-        warning: -10
-        id: 1
+        UserId: 1
+        TaskTitle: "Grocery shopping"
+        TaskDescription: "eggs, bacon, gummy bears"
+        DueDate: "2024-02-20T17:00:00-05:00"
+        WarningOffset: -10
+        Id: 1
     
     TaskPatch:
       summary: Example of task patch data
       value:
-        description: "Updated description"
+        TaskDescription: "Updated description"
     
     UpdatedTask:
       summary: Example of updated task
       value:
-        user_id: 1
-        title: "Grocery shopping"
-        description: "Updated description"
-        due_date: "2024-02-20T17:00:00-05:00"
-        warning: -10
-        id: 1
+        UserId: 1
+        TaskTitle: "Grocery shopping"
+        TaskDescription: "Updated description"
+        DueDate: "2024-02-20T17:00:00-05:00"
+        WarningOffset: -10
+        Id: 1
