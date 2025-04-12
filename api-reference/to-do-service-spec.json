@@ -8,6 +8,7 @@
       "/users": {
         "get": {
           "summary": "Get all users",
+          "description": "Returns all users in the to-do service's database.",
           "responses": {
             "200": {
               "description": "Successful response",

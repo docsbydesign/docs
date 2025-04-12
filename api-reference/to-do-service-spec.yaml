@@ -11,7 +11,10 @@ paths:
         This description is very long and takes up several
         lines of YAML in the OAS document.
 
+
         This operation has no path or query parameters.
+        It takes two newlines in the text to create one new line
+        in the documentation.
       responses:
         '200':
           description: Successful GET all users response
