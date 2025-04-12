@@ -386,8 +386,13 @@ components:
     Error_NotFound:
       summary: The requested resource or instance wasn't found
       type: object
-      properties:
-        description: Returns an empty object
+      nullable: true
+      properties: {}
+      additionalProperties: false
+      maxProperties: 0
+      description: "This object is an empty object {}"
+      examples:
+        - {}
   
   examples:
     UsersList:
