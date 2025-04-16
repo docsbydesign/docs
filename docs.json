@@ -9,6 +9,7 @@
   },
   "favicon": "/favicon.svg",
   "api": {
+    "openapi": "api-reference/to-do-service-spec.yaml",
     "playground": {
       "display": "none"
     }
