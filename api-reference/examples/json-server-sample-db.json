@@ -1,0 +1,62 @@
+{
+    "users": [
+      {
+        "Id": 1,
+        "LastName": "Johnson",
+        "FirstName": "Michael",
+        "ContactEmail": "michael.johnson@example.com"
+      },
+      {
+        "Id": 2,
+        "LastName": "Rodriguez",
+        "FirstName": "Sofia",
+        "ContactEmail": "sofia.rodriguez@example.com"
+      },
+      {
+        "Id": 3,
+        "LastName": "Chen",
+        "FirstName": "David",
+        "ContactEmail": "david.chen@example.com"
+      },
+      {
+        "Id": 4,
+        "LastName": "Patel",
+        "FirstName": "Priya",
+        "ContactEmail": "priya.patel@example.com"
+      }
+    ],
+    "tasks": [
+      {
+        "Id": 1,
+        "UserId": 1,
+        "TaskTitle": "Quarterly financial report",
+        "Description": "Prepare Q1 financial summary for the board meeting",
+        "DueDate": "2025-05-15T14:00:00.000-05:00",
+        "WarningOffset": -48
+      },
+      {
+        "Id": 2,
+        "UserId": 2,
+        "TaskTitle": "Client presentation",
+        "Description": "Create slides for the new product launch",
+        "DueDate": "2025-05-05T10:30:00.000-05:00",
+        "WarningOffset": -24
+      },
+      {
+        "Id": 3,
+        "UserId": 1,
+        "TaskTitle": "Team meeting",
+        "Description": "Weekly sync with the development team",
+        "DueDate": "2025-05-02T09:00:00.000-05:00",
+        "WarningOffset": -12
+      },
+      {
+        "Id": 4,
+        "UserId": 3,
+        "TaskTitle": "Project deadline",
+        "Description": "Final submission for the Alpha project",
+        "DueDate": "2025-05-30T17:00:00.000-05:00",
+        "WarningOffset": -72
+      }
+    ]
+  }

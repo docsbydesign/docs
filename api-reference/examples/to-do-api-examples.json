@@ -1,0 +1,150 @@
+{
+    "users": [
+      {
+        "Id": 1,
+        "LastName": "Johnson",
+        "FirstName": "Michael",
+        "ContactEmail": "michael.johnson@example.com"
+      },
+      {
+        "Id": 2,
+        "LastName": "Rodriguez",
+        "FirstName": "Sofia",
+        "ContactEmail": "sofia.rodriguez@example.com"
+      },
+      {
+        "Id": 3,
+        "LastName": "Chen",
+        "FirstName": "David",
+        "ContactEmail": "david.chen@example.com"
+      },
+      {
+        "Id": 4,
+        "LastName": "Patel",
+        "FirstName": "Priya",
+        "ContactEmail": "priya.patel@example.com"
+      }
+    ],
+    "userInputs": [
+      {
+        "LastName": "Johnson",
+        "FirstName": "Michael",
+        "ContactEmail": "michael.johnson@example.com"
+      },
+      {
+        "LastName": "Rodriguez",
+        "FirstName": "Sofia",
+        "ContactEmail": "sofia.rodriguez@example.com"
+      },
+      {
+        "LastName": "Chen",
+        "FirstName": "David",
+        "ContactEmail": "david.chen@example.com"
+      },
+      {
+        "LastName": "Patel",
+        "FirstName": "Priya",
+        "ContactEmail": "priya.patel@example.com"
+      }
+    ],
+    "userPatches": [
+      {
+        "ContactEmail": "michael.j@newdomain.com"
+      },
+      {
+        "LastName": "Rodriguez-Gomez",
+        "ContactEmail": "sofia.rg@example.com"
+      },
+      {
+        "FirstName": "Dave",
+        "LastName": "Chen-Williams"
+      },
+      {
+        "FirstName": "Priyanka",
+        "LastName": "Patel",
+        "ContactEmail": "priyanka.patel@example.com"
+      }
+    ],
+    "tasks": [
+      {
+        "Id": 1,
+        "UserId": 1,
+        "TaskTitle": "Quarterly financial report",
+        "Description": "Prepare Q1 financial summary for the board meeting",
+        "DueDate": "2025-05-15T14:00:00.000-05:00",
+        "WarningOffset": -48
+      },
+      {
+        "Id": 2,
+        "UserId": 2,
+        "TaskTitle": "Client presentation",
+        "Description": "Create slides for the new product launch",
+        "DueDate": "2025-05-05T10:30:00.000-05:00",
+        "WarningOffset": -24
+      },
+      {
+        "Id": 3,
+        "UserId": 1,
+        "TaskTitle": "Team meeting",
+        "Description": "Weekly sync with the development team",
+        "DueDate": "2025-05-02T09:00:00.000-05:00",
+        "WarningOffset": -12
+      },
+      {
+        "Id": 4,
+        "UserId": 3,
+        "TaskTitle": "Project deadline",
+        "Description": "Final submission for the Alpha project",
+        "DueDate": "2025-05-30T17:00:00.000-05:00",
+        "WarningOffset": -72
+      }
+    ],
+    "taskInputs": [
+      {
+        "UserId": 1,
+        "TaskTitle": "Quarterly financial report",
+        "TaskDescription": "Prepare Q1 financial summary for the board meeting",
+        "DueDate": "2025-05-15T14:00:00.000-05:00",
+        "WarningOffset": -48
+      },
+      {
+        "UserId": 2,
+        "TaskTitle": "Client presentation",
+        "TaskDescription": "Create slides for the new product launch",
+        "DueDate": "2025-05-05T10:30:00.000-05:00",
+        "WarningOffset": -24
+      },
+      {
+        "UserId": 1,
+        "TaskTitle": "Team meeting",
+        "TaskDescription": "Weekly sync with the development team",
+        "DueDate": "2025-05-02T09:00:00.000-05:00",
+        "WarningOffset": -12
+      },
+      {
+        "UserId": 3,
+        "TaskTitle": "Project deadline",
+        "TaskDescription": "Final submission for the Alpha project",
+        "DueDate": "2025-05-30T17:00:00.000-05:00",
+        "WarningOffset": -72
+      }
+    ],
+    "taskPatches": [
+      {
+        "TaskTitle": "Updated financial report",
+        "TaskDescription": "Include additional Q1 metrics in the board report"
+      },
+      {
+        "DueDate": "2025-05-07T10:30:00.000-05:00",
+        "WarningOffset": -48
+      },
+      {
+        "UserId": 2,
+        "TaskDescription": "Discuss upcoming product roadmap"
+      },
+      {
+        "TaskTitle": "Final project submission",
+        "WarningOffset": -96
+      }
+    ]
+  }
